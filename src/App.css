@@ -38,10 +38,10 @@
 
 .App {
   width: 100%;
-  height: 120vh;
+  height: auto;
   text-align: center;
   /* background-color: var(--Very-dark-blue); */
-  padding-top: 70px;
+  padding-top: 30px;
   overflow: hidden;
   /* background-color: lightcoral; */
 }
@@ -65,9 +65,14 @@
   color: #000;
 }
 
-.lighter-dark-text{
+.lighter-dark-text, .date{
   color:var(--Light-blue); 
   opacity:.85;
+  /* font-weight: 600; */
+}
+
+.date{
+  font-weight:600;
 }
 
 .light-bio{
@@ -137,8 +142,10 @@
   cursor: pointer;
 }
 
+
+
 .search-bar{
-  width: 76%;
+  width: 90vw;
   height:50px;
   /* background-color: var(--Dark-blue); */
   margin-right: auto;
@@ -188,10 +195,11 @@
   background-color:var(--Blue);
   color: #fff;
   font-size: 1rem;
+  cursor: pointer;
 }
 
 .user-card{
-  width: 72%;
+  width: 85vw;
   height: auto;
   max-height: 85vh;
   margin-right: auto;
@@ -200,6 +208,7 @@
   margin-top: 40px;
   border-radius: 15px;
   padding:4%;
+  margin-bottom: 4rem;
 }
 
 
@@ -270,13 +279,13 @@
 .profile-bio{
   /* color: var(--White); */
   opacity:.5;
+  margin-left: calc(25vw);
 }
 
 .repos-info{
   width: 92%;
   height:10vh;
   padding: 4%;
-  /* background-color:var(--Very-dark-blue); */
   border-radius: .8rem;
   margin-top: 20px;
  display: flex; 
@@ -305,29 +314,29 @@
   
 }
 
-.repo,.followers,.following{
-  /* position: absolute;
-  top: 0; */
+.repo,.followers,.following, .repo-num,.followers-num,.following-num{
   position:relative;
   top:-15px;
-  opacity: .5 ;
- 
-  
+  opacity: .6;
+ display: flex;
+ flex: 1 1 auto;
+ justify-content: center;
+ text-align:center;
 }
 
-.additional-info{
-  margin-top: 25px;
-  text-align: left;
-  margin-bottom: -15px;
 
+.additional-info{
+  margin-left: calc(23vw);
+  display: flex;
+  align-items: center;
+  justify-content:left;
+  flex-wrap: wrap;
 }
 
 .location,.link,.twitter,.comp{
   width: 100%;
-  /* color: #fff; */
   text-decoration: none;
-  /* opacity: .9; */
-  
+  text-align:left;
 }
 
 .icons{
@@ -335,31 +344,33 @@
 }
 
 .not-found{
-  /* color: #fff; */
   opacity: .5;
   text-decoration: none;
+  pointer-events: none;
 }
 
 
 @media screen and (min-width: 1000px) {
   .App{
-    width: 70%;
+    width: 85vw;
     margin-right:auto;
     margin-left:auto;
     padding-top: 20px;
-    height: 100vh;
+    height: auto;
+    margin-bottom: 4rem;
   }
 
   .search-bar{
     height:30px;
-    /* padding: 1.8%; */
+    width:76vw;
+    
   }
 
   .user-card{
-    width:76%;
-    height: 70vh;
-    max-height: 60vh;
-    padding:2%;
+    width:70vw;
+    height: 80vh;
+    max-height: auto;
+    padding:5vw;
     position: relative;
   }
 
@@ -382,6 +393,15 @@
     top:0;
   }
 
+  .bio,.light-desc{
+    text-align:justify;
+  }
+
+  .light-desc{
+    color:#000;
+    opacity: 1;
+  }
+
   .profile-bio{
     position: relative;
    margin-left: calc(24%);
@@ -398,7 +418,7 @@
   .additional-info{
     width: 75%;
     position: absolute;
-    bottom: 7%;
+    bottom: 15%;
     right: 0;
     margin-top: 0;
   }
@@ -415,6 +435,4 @@
 
 
 }
-
-
 
